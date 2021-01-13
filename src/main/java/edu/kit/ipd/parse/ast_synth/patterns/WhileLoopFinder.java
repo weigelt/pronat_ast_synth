@@ -70,10 +70,10 @@ public class WhileLoopFinder implements IASTPattern {
 				cbase.setAttributeValue("negated", false);
 
 				// until signals breaking loop
-				if (((String) n.getAttributeValue("keyphrase")).contains("until")) {
+				if (((String) n.getAttributeValue("keyphrase").toString()).contains("until")) {
 					cbase.setAttributeValue("negated", true);
 				}
-				if (n.getAttributeValue("type").equals("ENDING")) {
+				if (n.getAttributeValue("type").toString().equals("ENDING")) {
 					cbase.setAttributeValue(DO_WHILE, true);
 				}
 

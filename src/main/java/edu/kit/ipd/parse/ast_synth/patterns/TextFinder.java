@@ -70,13 +70,13 @@ public class TextFinder implements IASTPattern {
 						if ((int) t.getAttributeValue("instructionNumber") == instructionNumber) {
 							//								&& (int) t.getAttributeValue("conditionNumber") == (int) token.getAttributeValue("conditionNumber")) {
 							graph.createArc(astnode, t, graph.getArcType(ASTConstants.AST_POINTER));
-							msg += t.getAttributeValue("value");
+							msg += t.getAttributeValue("value").toString();
 
 							// add Coreference
 							if (!t.getIncomingArcsOfType(graph.getArcType("reference")).isEmpty()) {
 								INode ref = t.getIncomingArcsOfType(graph.getArcType("reference")).get(0).getSourceNode();
 								if (ref.getType().equals(graph.getNodeType("contextEntity"))) {
-									if (ref.getAttributeValue("typeOfEntity").equals("Pronoun")) {
+									if (ref.getAttributeValue("typeOfEntity").toString().equals("Pronoun")) {
 										if (!ref.getOutgoingArcsOfType(graph.getArcType("contextRelation")).isEmpty()) {
 
 											// run through all posible entities and pick the one with the highest confidence
@@ -95,7 +95,7 @@ public class TextFinder implements IASTPattern {
 											if (entity == null
 													&& !ref.getOutgoingArcsOfType(graph.getArcType("contextRelation")).isEmpty()) {
 												entity = (String) ref.getOutgoingArcsOfType(graph.getArcType("contextRelation")).get(0)
-														.getTargetNode().getAttributeValue("name");
+														.getTargetNode().getAttributeValue("name").toString();
 											}
 
 											if (entity != null) {

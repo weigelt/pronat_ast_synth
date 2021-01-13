@@ -88,23 +88,23 @@ public class ConditionFinder implements IASTPattern {
 					graph.createArc(cbase, celse, graph.getArcType(AST_CHILD));
 				}
 			}
-			switch ((String) n.getAttributeValue("commandType")) {
-			case "IF_STATEMENT":
+			switch ((String) n.getAttributeValue("commandType").toString()) {
+			case "IF":
 				graph.createArc(cif, n, graph.getArcType(AST_POINTER));
 				cif.setAttributeValue(POINTER_SUM, (int) cif.getAttributeValue(POINTER_SUM) + 1);
 				cbase.setAttributeValue(POINTER_SUM, (int) cbase.getAttributeValue(POINTER_SUM) + 1);
 				break;
-			case "ELSE_STATEMENT":
+			case "ELSE":
 				graph.createArc(celse, n, graph.getArcType(AST_POINTER));
 				celse.setAttributeValue(POINTER_SUM, (int) celse.getAttributeValue(POINTER_SUM) + 1);
 				cbase.setAttributeValue(POINTER_SUM, (int) cbase.getAttributeValue(POINTER_SUM) + 1);
 				break;
-			case "THEN_STATEMENT":
+			case "THEN":
 				graph.createArc(cthen, n, graph.getArcType(AST_POINTER));
 				cthen.setAttributeValue(POINTER_SUM, (int) cthen.getAttributeValue(POINTER_SUM) + 1);
 				cbase.setAttributeValue(POINTER_SUM, (int) cbase.getAttributeValue(POINTER_SUM) + 1);
 				break;
-			case "INDEPENDENT_STATEMENT":
+			case "INDEPENDENT":
 				//				if (cthen.getOutgoingArcsOfType(graph.getArcType("AST-Pointer")).isEmpty()) {
 				//					graph.createArc(cthen, n, graph.getArcType("AST-Pointer"));
 				//					 //Ensure it takes over and doesn't abort after one Pointer

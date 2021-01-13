@@ -73,7 +73,7 @@ public class ForLoopFinder implements IASTPattern {
 
 		// Trennung: While hat Conditon aber For hat KeyPhrase
 		for (INode n : graph.getNodesOfType(graph.getNodeType("loop"))) {
-			if (n.getAttributeValue("type").equals("LOOP")) {
+			if (n.getAttributeValue("type").toString().equals("LOOP")) {
 				loopNumber++;
 
 				cbase = graph.createNode(graph.getNodeType(AST_FOR_BASE));
