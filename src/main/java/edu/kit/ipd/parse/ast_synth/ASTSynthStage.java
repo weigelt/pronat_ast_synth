@@ -178,7 +178,7 @@ public class ASTSynthStage implements IPipelineStage {
 
 	@Override
 	public String getID() {
-		return null;
+		return ID;
 	}
 
 	// creates basic types for everything
