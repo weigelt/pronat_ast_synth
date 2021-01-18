@@ -79,7 +79,6 @@ public class ASTSynthStage implements IPipelineStage {
 					e.printStackTrace();
 				}
 			}
-
 		}
 
 		pipeline = new ArrayList<>();
