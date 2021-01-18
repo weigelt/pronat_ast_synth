@@ -1,21 +1,16 @@
 package edu.kit.ipd.parse.ast_synth;
 
-import static org.junit.Assert.fail;
-
-import java.io.File;
-import java.io.IOException;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-import edu.kit.ipd.parse.ast_synth.ASTSynthStage;
-import edu.kit.ipd.parse.luna.data.MissingDataException;
-import edu.kit.ipd.parse.luna.data.PrePipelineData;
-import edu.kit.ipd.parse.luna.graph.IGraph;
-import edu.kit.ipd.parse.luna.pipeline.Pipeline;
-import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
-import edu.kit.ipd.parse.luna.tools.StringToHypothesis;
-
 public class ASTSynthStageTest {
+
+	@Test
+	public void initTest() {
+		ASTSynthStage astSynthStage = new ASTSynthStage();
+		astSynthStage.init();
+		Assert.assertTrue(!astSynthStage.pipeline.isEmpty());
+	}
 
 	//	private GraphDrawer gd;
 	//	private Pipeline<PrePipelineData> prepipe;
