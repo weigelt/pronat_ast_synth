@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.ast_synth;
+package edu.kit.ipd.pronat.ast_synth;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
@@ -7,22 +7,21 @@ import java.util.stream.Collectors;
 
 import edu.kit.ipd.parse.luna.data.MissingDataException;
 import edu.kit.ipd.parse.luna.data.PipelineDataCastException;
-import edu.kit.ipd.parse.luna.data.PostPipelineData;
-import edu.kit.ipd.parse.luna.data.ast.ASTConstants;
-import edu.kit.ipd.parse.luna.data.ast.IASTParentConfidenceCalculator;
-import edu.kit.ipd.parse.luna.data.ast.IASTPattern;
 import edu.kit.ipd.parse.luna.data.AbstractPipelineData;
-import edu.kit.ipd.parse.luna.data.ast.visitor.IVisitor;
 import edu.kit.ipd.parse.luna.graph.*;
 import edu.kit.ipd.parse.luna.pipeline.IPipelineStage;
 import edu.kit.ipd.parse.luna.pipeline.PipelineStageException;
+import edu.kit.ipd.pronat.postpipelinedatamodel.PostPipelineData;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.ASTConstants;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTParentConfidenceCalculator;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTPattern;
+import edu.kit.ipd.pronat.postpipelinedatamodel.code.Method;
 import org.kohsuke.MetaInfServices;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.luna.data.code.Method;
 
 /**
  * @author Sebastian Weigelt
@@ -59,9 +58,9 @@ public class ASTSynthStage implements IPipelineStage {
 
 		leafType = props.getProperty("IgnoreLeafType");
 
-		Reflections reflections = new Reflections("edu.kit.ipd.parse.ast_synth");
+		Reflections reflections = new Reflections("edu.kit.ipd.pronat.ast_synth");
 		Set<Class<? extends IASTPattern>> classesPattern = reflections.getSubTypesOf(IASTPattern.class).stream()
-				.filter(e -> e.getPackageName().startsWith("edu.kit.ipd.parse.ast_synth")).collect(Collectors.toSet());
+				.filter(e -> e.getPackageName().startsWith("edu.kit.ipd.pronat.ast_synth")).collect(Collectors.toSet());
 
 		Set<IASTPattern> patternLoader = new HashSet<>();
 
@@ -91,7 +90,7 @@ public class ASTSynthStage implements IPipelineStage {
 		}
 
 		Set<Class<? extends IASTParentConfidenceCalculator>> classesStrat = reflections.getSubTypesOf(IASTParentConfidenceCalculator.class)
-				.stream().filter(e -> e.getPackageName().startsWith("edu.kit.ipd.parse.ast_synth")).collect(Collectors.toSet());
+				.stream().filter(e -> e.getPackageName().startsWith("edu.kit.ipd.pronat.ast_synth")).collect(Collectors.toSet());
 
 		Set<IASTParentConfidenceCalculator> pccalcLoader = new HashSet<>();
 
@@ -133,7 +132,7 @@ public class ASTSynthStage implements IPipelineStage {
 		logger.debug("Started {}", ID);
 
 		try {
-			postPipelineData = data.asPostPipelineData();
+			postPipelineData = (PostPipelineData) data.asPostPipelineData();
 			graph = postPipelineData.getGraph();
 		} catch (PipelineDataCastException e) {
 			// TODO: auto-generated!
@@ -152,7 +151,7 @@ public class ASTSynthStage implements IPipelineStage {
 
 		if (symbols == null) {
 			symbols = graph.createNode(graph.createNodeType("Symboltable"));
-			symbols.getType().addAttributeToType("edu.kit.ipd.parse.ast.Symbol", "symbols");
+			symbols.getType().addAttributeToType("edu.kit.ipd.pronat.ast.Symbol", "symbols");
 		}
 
 		initNodesAndArcs();

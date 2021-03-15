@@ -1,13 +1,12 @@
-package edu.kit.ipd.parse.ast_synth.calc;
+package edu.kit.ipd.pronat.ast_synth.calc;
 
 import java.util.*;
 
-import org.kohsuke.MetaInfServices;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.ASTConstants;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTParentConfidenceCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import edu.kit.ipd.parse.luna.data.ast.ASTConstants;
-import edu.kit.ipd.parse.luna.data.ast.IASTParentConfidenceCalculator;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
@@ -34,7 +33,8 @@ public class ASTCorePCCalc implements IASTParentConfidenceCalculator {
 
 	Properties props;
 
-	@Override public void init(IGraph graph) {
+	@Override
+	public void init(IGraph graph) {
 		props = ConfigManager.getConfiguration(ASTCorePCCalc.class);
 
 		this.graph = graph; // init needed 

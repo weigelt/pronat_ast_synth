@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.ast_synth;
+package edu.kit.ipd.pronat.ast_synth;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -199,7 +199,7 @@ public class ASTSynthStageTest {
 	//	public void parallel() {
 	//		setUp();
 	//		File out = new File("./out/test/parallel.tex");
-	//		gd.setFile(out);
+	//		gd.setFile(out);.parse
 	//		piperun("Armar go to the fridge in the meantime look at the recipe and bring coffee");
 	//		// latexCompile(out); //doesn't work for single tests for whatever reason?
 	//	}

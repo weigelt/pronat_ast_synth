@@ -1,10 +1,10 @@
-package edu.kit.ipd.parse.ast_synth.patterns;
+package edu.kit.ipd.pronat.ast_synth.patterns;
 
-import edu.kit.ipd.parse.luna.data.ast.ASTConstants;
-import edu.kit.ipd.parse.luna.data.ast.IASTPattern;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.graph.INodeType;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.ASTConstants;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTPattern;
 
 /**
  * @author Sebastian Weigelt

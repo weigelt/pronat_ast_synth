@@ -1,16 +1,14 @@
-package edu.kit.ipd.parse.ast_synth.calc.strat;
+package edu.kit.ipd.pronat.ast_synth.calc.strat;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.kohsuke.MetaInfServices;
-
-import edu.kit.ipd.parse.luna.data.ast.ASTConstants;
-import edu.kit.ipd.parse.luna.data.ast.IASTParentConfidenceCalculator;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.ASTConstants;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTParentConfidenceCalculator;
 
 /**
  * @author Sebastian Weigelt

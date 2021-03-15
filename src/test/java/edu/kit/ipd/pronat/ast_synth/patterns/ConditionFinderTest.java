@@ -1,4 +1,4 @@
-package edu.kit.ipd.parse.ast_synth.patterns;
+package edu.kit.ipd.pronat.ast_synth.patterns;
 
 import edu.kit.ipd.parse.conditionDetection.CommandType;
 import edu.kit.ipd.parse.luna.graph.*;

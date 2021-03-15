@@ -1,14 +1,14 @@
-package edu.kit.ipd.parse.ast_synth.patterns;
+package edu.kit.ipd.pronat.ast_synth.patterns;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.kit.ipd.parse.luna.data.ast.IASTPattern;
-import edu.kit.ipd.parse.luna.data.ast.Symbol;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTPattern;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.Symbol;
 
 /**
  * @author Sebastian Weigelt

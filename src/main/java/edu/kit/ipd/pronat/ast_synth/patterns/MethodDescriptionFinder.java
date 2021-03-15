@@ -1,17 +1,17 @@
-package edu.kit.ipd.parse.ast_synth.patterns;
+package edu.kit.ipd.pronat.ast_synth.patterns;
 
 import java.util.Properties;
 
-import edu.kit.ipd.parse.ast_synth.patterns.util.MethodUtils;
+import edu.kit.ipd.pronat.ast_synth.patterns.util.MethodUtils;
 
-import edu.kit.ipd.parse.luna.data.ast.ASTConstants;
-import edu.kit.ipd.parse.luna.data.ast.IASTPattern;
 import edu.kit.ipd.parse.luna.graph.IArc;
 import edu.kit.ipd.parse.luna.graph.IGraph;
 import edu.kit.ipd.parse.luna.graph.INode;
 import edu.kit.ipd.parse.luna.tools.ConfigManager;
-import edu.kit.ipd.parse.luna.data.code.Method;
-import edu.kit.ipd.parse.luna.data.code.Parameter;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.ASTConstants;
+import edu.kit.ipd.pronat.postpipelinedatamodel.ast.IASTPattern;
+import edu.kit.ipd.pronat.postpipelinedatamodel.code.Method;
+import edu.kit.ipd.pronat.postpipelinedatamodel.code.Parameter;
 
 /**
  * @author Sebastian Weigelt
