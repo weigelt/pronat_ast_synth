@@ -1,7 +1,7 @@
 package edu.kit.ipd.pronat.ast_synth.patterns;
 
-import edu.kit.ipd.parse.conditionDetection.CommandType;
 import edu.kit.ipd.parse.luna.graph.*;
+import edu.kit.ipd.pronat.condition_detection.model.CommandType;
 import org.junit.Test;
 
 public class ConditionFinderTest {

@@ -77,7 +77,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>edu.kit.ipd.parse</groupId>
+            <groupId>edu.kit.ipd.pronat</groupId>
             <artifactId>condition_detection</artifactId>
             <scope>test</scope>
         </dependency>
